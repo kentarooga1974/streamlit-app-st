@@ -5,10 +5,10 @@ from datetime import date
 # DB接続設定（環境に合わせて変更）
 conn = psycopg2.connect(
     host=st.secrets["postgres"]["host"],
+    port=st.secrets["postgres"]["port"],
     dbname=st.secrets["postgres"]["dbname"],
     user=st.secrets["postgres"]["user"],
     password=st.secrets["postgres"]["password"],
-    port=st.secrets["postgres"]["port"],
     sslmode='require'
 )
 cur = conn.cursor()
