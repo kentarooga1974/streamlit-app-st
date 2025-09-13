@@ -8,7 +8,8 @@ conn = psycopg2.connect(
     dbname=st.secrets["postgres"]["dbname"],
     user=st.secrets["postgres"]["user"],
     password=st.secrets["postgres"]["password"],
-    port=st.secrets["postgres"]["port"]
+    port=st.secrets["postgres"]["port"],
+    sslmode='require'
 )
 cur = conn.cursor()
 
