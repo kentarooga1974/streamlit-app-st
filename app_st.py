@@ -4,11 +4,11 @@ from datetime import date
 
 # DB接続設定（環境に合わせて変更）
 conn = psycopg2.connect(
-    host="localhost",
-    dbname="kentaro_db",
-    user="postgres",
-    password="16231623",
-    port="5432"
+    host=st.secrets["postgres"]["host"],
+    dbname=st.secrets["postgres"]["dbname"],
+    user=st.secrets["postgres"]["user"],
+    password=st.secrets["postgres"]["password"],
+    port=st.secrets["postgres"]["port"]
 )
 cur = conn.cursor()
 
